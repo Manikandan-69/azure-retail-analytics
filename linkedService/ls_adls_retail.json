@@ -1,0 +1,15 @@
+{
+	"name": "ls_adls_retail",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://stretailanalytics.dfs.core.windows.net/",
+			"tenant": "e6039a22-8249-4943-9124-527da837cd4e",
+			"servicePrincipalId": "25cf9d73-4b71-47c1-826f-60c5fbd518e3",
+			"servicePrincipalCredentialType": "ServicePrincipalKey",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEUxOUFFNDJELURBREMtNEU2OC04ODU2LTdCM0JFOTlFNDU0MV80N2I1MzlmMi1iMWNlLTQ1OTUtOTI5ZS03NDI5ODQwNDQ4YzYiDQp9"
+		}
+	}
+}
