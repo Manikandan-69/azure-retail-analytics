@@ -1,0 +1,70 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf1-retail-analytics"
+		},
+		"ls_adls_retail_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'ls_adls_retail'"
+		},
+		"ls_adls_retail_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://stretailanalytics.dfs.core.windows.net/"
+		},
+		"ls_adls_retail_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "e6039a22-8249-4943-9124-527da837cd4e"
+		},
+		"ls_adls_retail_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "25cf9d73-4b71-47c1-826f-60c5fbd518e3"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf1-retail-analytics_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_adls_retail_servicePrincipalCredential": {
+						"value": "[parameters('ls_adls_retail_servicePrincipalCredential')]"
+					},
+					"ls_adls_retail_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls_retail_properties_typeProperties_url')]"
+					},
+					"ls_adls_retail_properties_typeProperties_tenant": {
+						"value": "[parameters('ls_adls_retail_properties_typeProperties_tenant')]"
+					},
+					"ls_adls_retail_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('ls_adls_retail_properties_typeProperties_servicePrincipalId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

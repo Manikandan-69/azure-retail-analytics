@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf1-retail-analytics"
+		},
+		"ls_adls_retail_servicePrincipalCredential": {
+			"value": ""
+		},
+		"ls_adls_retail_properties_typeProperties_url": {
+			"value": "https://stretailanalytics.dfs.core.windows.net/"
+		},
+		"ls_adls_retail_properties_typeProperties_tenant": {
+			"value": "e6039a22-8249-4943-9124-527da837cd4e"
+		},
+		"ls_adls_retail_properties_typeProperties_servicePrincipalId": {
+			"value": "25cf9d73-4b71-47c1-826f-60c5fbd518e3"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
